@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+import java.io.Serializable;
 import java.sql.Date;
 
 @AllArgsConstructor
@@ -14,8 +16,10 @@ import java.sql.Date;
 @Setter
 @Getter
 @Entity
-public class Consults {
-
+@IdClass(Consults.class)
+public class Consults implements Serializable {
+    @Id
+    private int pid;
     @Id
     private int did;
     @Id

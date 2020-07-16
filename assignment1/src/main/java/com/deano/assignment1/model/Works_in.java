@@ -7,13 +7,17 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.ManyToMany;
+import java.io.Serializable;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-public class Works_in {
+@IdClass(Works_in.class)
+public class Works_in implements Serializable {
 
     @Id
     private int did;

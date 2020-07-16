@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
@@ -14,7 +16,8 @@ import java.util.Date;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Specialization {
+@IdClass(Specialization.class)
+public class Specialization implements Serializable {
 
     @Id
     private int did;
